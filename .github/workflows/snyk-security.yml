@@ -18,7 +18,7 @@ jobs:
      #install dependencies
      - run: npm i -g snyk-delta
      #authenticate with your snyk token
-     - run: snyk auth ${{ secrets.SNYK_TOKEN }}
+     - run: snyk auth 19236982-42fd-49e5-bc1c-10cc8ea78561
      #run a snyk delta test only failing of there are new criticial issues, Not if the project hasn't been monitored
      - run: snyk test --json --print-deps --severity-threshold=critical | snyk-delta --setPassIfNoBaseline true 
      #if the previous scan doesn't come back with an error code then monitor the project
