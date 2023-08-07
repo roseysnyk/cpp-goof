@@ -15,11 +15,12 @@ jobs:
     steps:
      #use the current repo
      - uses: actions/checkout@master
-     #install snyk-delta
+     #install snyk-delta/html
      - run: npm i -g snyk-delta
+     - run: npm i -g snyk-to-html
      #authenticate with your snyk token
      - run: snyk auth 4b876be1-edc2-4d04-be53-7c91508920c6
      #run a snyk test only failing of there are new critical issues, Not if the project hasn't been monitored
-     - run: snyk test --unmanaged --severity-threshold=critical
+     - run: snyk test --unmanaged --severity-threshold=critical --json | snyk-to-html -o results.html
      #if the previous scan doesn't come back with an error code then monitor the project
      - run: snyk monitor
