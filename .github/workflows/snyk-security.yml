@@ -19,7 +19,7 @@ jobs:
      - run: npm i -g snyk-delta
      #authenticate with your snyk token
      - run: snyk auth 4b876be1-edc2-4d04-be53-7c91508920c6
-     #run a snyk delta test only failing of there are new critical issues, Not if the project hasn't been monitored
-     - run: snyk test --unmanaged --json --print-deps | snyk-delta --baselineOrg 1002ff55-9793-4707-9b36-4038d6c88df1 --baselineProject 4e6363b4-a0d0-4b9d-acbe-0a7c8ec9c634 --setPassIfNoBaseline true 
+     #run a snyk test only failing of there are new critical issues, Not if the project hasn't been monitored
+     - run: snyk test --unmanaged
      #if the previous scan doesn't come back with an error code then monitor the project
      - run: snyk monitor
