@@ -20,6 +20,6 @@ jobs:
      #authenticate with your snyk token
      - run: snyk auth 4b876be1-edc2-4d04-be53-7c91508920c6
      #run a snyk test only failing of there are new critical issues, Not if the project hasn't been monitored
-     - run: snyk test --unmanaged
+     - run: snyk test --unmanaged --severity-threshold=critical
      #if the previous scan doesn't come back with an error code then monitor the project
      - run: snyk monitor
