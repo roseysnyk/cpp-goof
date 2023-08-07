@@ -23,4 +23,4 @@ jobs:
      #run a snyk test only failing of there are new critical issues, Not if the project hasn't been monitored
      - run: snyk test --unmanaged --severity-threshold=critical --json | snyk-to-html -o results.html
      #if the previous scan doesn't come back with an error code then monitor the project
-     - run: snyk monitor
+     - run: snyk monitor --unmanaged 
