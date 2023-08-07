@@ -4,7 +4,7 @@ on: push
 #defines the jobs to be run
 jobs:
 
-  #only 1 job run snyk delta and if that passes run snyk monitor
+  #only 1 job run snyk delta and if that passes run snyk monitor 
   snyk-delta-monitor:
 
     #run this on an ubuntu runner using one of snyks node images as a container
